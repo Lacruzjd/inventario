@@ -13,13 +13,13 @@ public class Ingrediente {
     private String lote;
     private String vencimiento;
     private String ingreso;
-    private Float precio;
+    private Double precio;
 
     public Ingrediente(){}
 
     public Ingrediente(Categoria categoria, SubCategoria subcategoria, String tipo, String marca, String lote,
             String vencimiento,
-            Float precio) {
+            Double precio) {
         this.categoria = categoria;
         this.subCategoria = subcategoria;
         this.tipo = tipo;
