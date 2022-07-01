@@ -10,12 +10,22 @@ import entidades.SubCategoria;
 public class App {
     public static void main(String[] args) throws Exception {
         
-        Categoria categoria = new Categoria("Lacteos");
-        SubCategoria subCategoria = new SubCategoria("Leche");
-        SubCategoria subCategoria2 = new SubCategoria("Quesos");
+        Categoria lacteos = new Categoria("Lacteos");
+        ManejoDatos categorias = new PruebasTerminal();
+        categorias.crear(lacteos);
 
-        Ingrediente ingrediente = new Ingrediente(categoria, subCategoria, "Entera", "Conaprole", "56FH","12/05/22", 40.0);
-        Ingrediente ingrediente2 = new Ingrediente(categoria, subCategoria2, "Brie", "Maia", "56FH","12/05/22", 40.0);
+        SubCategoria leche = new SubCategoria("Leche");
+        SubCategoria quesos = new SubCategoria("Quesos");
+        ManejoDatos subCategorias = new PruebasTerminal();
+        subCategorias.crear(leche);
+        subCategorias.crear(quesos);
+        subCategorias.eliminar(quesos);
+
+        categorias.listar();
+        subCategorias.listar();
+
+       Ingrediente ingrediente = new Ingrediente(lacteos, leche, "Entera", "Conaprole", "56FH","12/05/22", 40.0);
+        Ingrediente ingrediente2 = new Ingrediente(lacteos, quesos, "Brie", "Maia", "56FH","12/05/22", 40.0);
 
 
         ManejoDatos elemento = new PruebasTerminal();

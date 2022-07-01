@@ -1,14 +1,16 @@
 package datos;
 
+import java.util.HashSet;
 
 public class PruebasTerminal implements ManejoDatos {
 
-    
+    private HashSet<Object> datos = new HashSet<>();
+
     public PruebasTerminal(){}
 
     @Override
     public void crear(Object elemento) {
-        DATOS.add(elemento);;
+        this.datos.add(elemento);
     }
 
     @Override
@@ -17,14 +19,15 @@ public class PruebasTerminal implements ManejoDatos {
     }
 
     @Override
-    public void eliminar() {
+    public void eliminar(Object elemento) {
+        datos.remove(elemento);
         
     }
 
     @Override
     public void listar() {
-        for (Object object : DATOS) {
-            System.out.println(object);
+        for (Object object : datos) {
+            System.out.println(object.toString());
         }
         
     }
